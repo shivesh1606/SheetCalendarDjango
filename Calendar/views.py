@@ -41,3 +41,7 @@ def auth(request):
     user_profile = get_user_profile(creds.token)
     print(user_profile)
     return HttpResponse("Authentication successful! + " + str(user_profile.get("name")))
+
+def signup_redirect(request):
+    messages.error(request, "Something wrong here, it may be that you already have account!")
+    return redirect("homepage")

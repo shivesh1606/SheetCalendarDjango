@@ -1,3 +1,4 @@
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,5 +15,9 @@
     <a href="register.php">Register</a>
     <Button >Click Me</Button>
     <a href={% url 'auth' %}>Logout</a>
+    <a href="{% provider_login_url 'google'%}?next=/">
+        <i class="fab fa-google"></i>
+        Login with Google
+    </a>
 </body>
 </html>
